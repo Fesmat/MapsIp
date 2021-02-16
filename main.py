@@ -37,5 +37,33 @@ if __name__ == '__main__':
                 if zoom > 1:
                     zoom -= 1
                 write_image()
+            if i.type == pygame.KEYDOWN and i.key == pygame.K_LEFT:
+                coords = list(map(float, coords.split(',')))
+                coords[0] -= zoom * 0.5
+                if coords[0] < -180:
+                    coords[0] += zoom * 0.5
+                coords = ','.join(map(str, coords))
+                write_image()
+            if i.type == pygame.KEYDOWN and i.key == pygame.K_RIGHT:
+                coords = list(map(float, coords.split(',')))
+                coords[0] += zoom * 0.5
+                if coords[0] > 180:
+                    coords[0] -= zoom * 0.5
+                coords = ','.join(map(str, coords))
+                write_image()
+            if i.type == pygame.KEYDOWN and i.key == pygame.K_UP:
+                coords = list(map(float, coords.split(',')))
+                coords[1] += zoom * 0.5
+                if coords[1] > 90:
+                    coords[0] -= zoom * 0.5
+                coords = ','.join(map(str, coords))
+                write_image()
+            if i.type == pygame.KEYDOWN and i.key == pygame.K_DOWN:
+                coords = list(map(float, coords.split(',')))
+                coords[1] -= zoom * 0.5
+                if coords[1] < -90:
+                    coords[1] += zoom * 0.5
+                coords = ','.join(map(str, coords))
+                write_image()
         clock.tick(50)
         pygame.display.flip()
