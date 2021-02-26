@@ -64,30 +64,30 @@ if __name__ == '__main__':
                 write_image()
             if i.type == pygame.KEYDOWN and i.key == pygame.K_LEFT:
                 coords = list(map(float, coords.split(',')))
-                coords[0] -= 10 / zoom
+                coords[0] -= 1 / zoom
                 if coords[0] < -180:
-                    coords[0] += 10 / zoom
+                    coords[0] += 1 / zoom
                 coords = ','.join(map(str, coords))
                 write_image()
             if i.type == pygame.KEYDOWN and i.key == pygame.K_RIGHT:
                 coords = list(map(float, coords.split(',')))
-                coords[0] += 10 / zoom
+                coords[0] += 1 / zoom
                 if coords[0] > 180:
-                    coords[0] -= 10 / zoom
+                    coords[0] -= 1 / zoom
                 coords = ','.join(map(str, coords))
                 write_image()
             if i.type == pygame.KEYDOWN and i.key == pygame.K_UP:
                 coords = list(map(float, coords.split(',')))
-                coords[1] += 10 / zoom
+                coords[1] += 1 / zoom
                 if coords[1] > 90:
-                    coords[0] -= 10 / zoom
+                    coords[0] -= 1 / zoom
                 coords = ','.join(map(str, coords))
                 write_image()
             if i.type == pygame.KEYDOWN and i.key == pygame.K_DOWN:
                 coords = list(map(float, coords.split(',')))
-                coords[1] -= 10 / zoom
+                coords[1] -= 1 / zoom
                 if coords[1] < -90:
-                    coords[1] += 10 / zoom
+                    coords[1] += 1 / zoom
                 coords = ','.join(map(str, coords))
                 write_image()
             button_play.listen(events)
